@@ -9,7 +9,7 @@ books_authors = db.Table(
 class Books(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), index=True, unique=True, nullable=False)
-    descpription = db.Column(db.String(300))
+    description = db.Column(db.String(300))
     genre = db.Column(db.String(200), index=True)
     year_published = db.Column(db.Integer, index=True)
     authors = db.relationship(
@@ -23,7 +23,7 @@ class Books(db.Model):
         return f'<Book {self.id} - {self.title}>'
     
 class Authors(db.Model):
-    id = db.Column(db.Integer, primarykey=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False)
     surname = db.Column(db.String(200), index=True, nullable=False)
     birth_year = db.Column(db.Date)
@@ -33,7 +33,7 @@ class Authors(db.Model):
 
 
 class Rentals(db.Model):
-    id = db.Column(db.Integer, primarykey=True)
+    id = db.Column(db.Integer, primary_key=True)
     book_id = db.Column(db.Integer, db.ForeignKey('books.id'), index=True, nullable=False)
     rental_date = db.Column(db.Date, index=True, nullable=False)
     return_date = db.Column(db.Date, index=True)

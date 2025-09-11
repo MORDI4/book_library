@@ -1,0 +1,30 @@
+# Python cache / build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# SQLite database
+*.db
+instance/
+*.sqlite3
+
+# Migrations (opcjonalnie można trzymać folder migrations, ale często ignoruje się)
+migrations
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# Logs
+*.log
