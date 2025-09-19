@@ -45,10 +45,33 @@ Utwórz plik .flaskenv w katalogu głównym z następującą zawartością:
     FLASK_APP=library.py
     FLASK_ENV=development
 
+5. **Zainicjalizuj migracje bazy danych**:
 
-5. **Uruchom aplikację**:
+    ```bash
+    flask db init # tylko przy pierwszym uruchomieniu projektu
+    flask db migrate -m "Initial migration"
+    flask db upgrade
+
+6. **Uruchom aplikację**:
 
     ```bash
     flask run
     
 Aplikacja będzie dostępna pod adresem: http://127.0.0.1:5000
+
+---
+
+## 📋 Funkcjonalności
+
+- **Książki**:
+  - Dodawanie nowych książek
+  - Edytowanie istniejących książek
+  - Usuwanie książek
+  - Przeglądanie listy książek z informacjami o tytule, autorze, roku wydania, gatunku, opisie i statusie (wypożyczona/dostępna)
+
+- **Wypożyczenia**:
+  - Dodawanie nowych wypożyczeń
+  - Aktualizowanie daty zwrotu
+  - Przeglądanie historii wypożyczeń
+
+---
