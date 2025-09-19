@@ -84,4 +84,31 @@
   </table>
 </div>
 
+<div class="container mt-5">
+  <h2>Dodaj nową książkę</h2>
+  <form method="POST" action="{{ url_for('add_book') }}">
+    <div class="mb-3">
+      <label for="title" class="form-label">Tytuł</label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Autor (imię i nazwisko)</label>
+      <input type="text" class="form-control" id="author" name="author" required>
+    </div>
+    <div class="mb-3">
+      <label for="year_published" class="form-label">Rok wydania</label>
+      <input type="number" class="form-control" id="year_published" name="year_published">
+    </div>
+    <div class="mb-3">
+      <label for="genre" class="form-label">Gatunek</label>
+      <input type="text" class="form-control" id="genre" name="genre">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Opis</label>
+      <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj książkę</button>
+  </form>
+</div>
+
 {% endblock %}

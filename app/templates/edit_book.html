@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <h2>Edytuj książkę: {{ book.title }}</h2>
+  <form method="POST" action="{{ url_for('edit', book_id=book.id) }}">
+    
+    <div class="mb-3">
+      <label for="title" class="form-label">Tytuł</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ book.title }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="authors" class="form-label">Autorzy (imię i nazwisko, oddziel przecinkiem)</label>
+      <input type="text" class="form-control" id="authors" name="authors"
+             value="{% for author in book.authors %}{{ author.name }} {{ author.surname }}{% if not loop.last %}, {% endif %}{% endfor %}">
+    </div>
+
+    <div class="mb-3">
+      <label for="year_published" class="form-label">Rok wydania</label>
+      <input type="number" class="form-control" id="year_published" name="year_published"
+             value="{{ book.year_published }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="genre" class="form-label">Gatunek</label>
+      <input type="text" class="form-control" id="genre" name="genre" value="{{ book.genre }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Opis</label>
+      <textarea class="form-control" id="description" name="description" rows="3">{{ book.description }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+    <a href="{{ url_for('main_page') }}" class="btn btn-secondary">Anuluj</a>
+  </form>
+</div>
+
+{% endblock %}

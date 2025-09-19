@@ -28,3 +28,6 @@ migrations
 
 # Logs
 *.log
+
+test_data.py
+clear_data.py
