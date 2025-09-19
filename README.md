@@ -18,37 +18,37 @@ Aplikacja webowa do zarządzania biblioteką książek — umożliwia dodawanie,
 
 1. **Sklonuj repozytorium**:
 
-```bash
-git clone https://github.com/MORDI4/book_library.git
-cd book_library
+    ```bash
+    git clone https://github.com/MORDI4/book_library.git
+    cd book_library
 
 2. **Utwórz i aktywuj wirtualne środowisko**:
 
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# Linux/MacOS
-source venv/bin/activate
+    ```bash
+    python -m venv venv
+    # Windows
+    venv\Scripts\activate
+    # Linux/MacOS
+    source venv/bin/activate
 
 
 3. **Zainstaluj zależności**:
 
-```bash
-pip install -r requirements.txt
+    ```bash
+    pip install -r requirements.txt
 
 
 4. **Skonfiguruj plik .flaskenv**:
 Utwórz plik .flaskenv w katalogu głównym z następującą zawartością:
 
-```bash
-FLASK_APP=library.py
-FLASK_ENV=development
+    ```bash
+    FLASK_APP=library.py
+    FLASK_ENV=development
 
 
 5. **Uruchom aplikację**:
 
-```bash
-flask run
+    ```bash
+    flask run
     
 Aplikacja będzie dostępna pod adresem: http://127.0.0.1:5000
